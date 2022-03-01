@@ -2,6 +2,8 @@ import psutil
 
 
 # Measure CPU times
+
+
 def monitor_cpu_times():
     print("\n CPU TIMES")
     cpu_times = psutil.cpu_times()
@@ -14,9 +16,12 @@ def monitor_cpu_times():
 
 
 # Measure CPU util
+
+
 def monitor_cpu_util():
     print("\n CPU UTIL")
-    print(psutil.cpu_precent())
+    print(psutil.cpu_percent())
+
 
 # Count working CPU cores
 
@@ -24,6 +29,7 @@ def monitor_cpu_util():
 def mointor_cpu_cores():
     print("\n CPU CORES")
     print(psutil.cpu_count())
+
 
 # Measure CPU frequencies
 
@@ -34,6 +40,8 @@ def monitor_cpu_freq():
 
 
 # Monitor RAM Usage
+
+
 def monitor_ram():
     print("\n RAM USAGE")
     virtual_memory = psutil.virtual_memory()
@@ -42,12 +50,18 @@ def monitor_ram():
     print("Used Memory {} bytes".format(virtual_memory.used))
     print("Percentage used {}%".format(virtual_memory.percent))
 
+
 # Monitor disk partitions
+
+
 def monitor_disk():
     print("\n DISK USAGE")
     print(psutil.disk_partitions())
 
+
 # Disk utilization
+
+
 def monitor_disk_usage():
     print("\n DISK USAGE")
     disk_usage = psutil.disk_usage('/')
@@ -56,19 +70,26 @@ def monitor_disk_usage():
     print("Used Memory {} bytes".format(disk_usage.used))
     print("Percentage used {}%".format(disk_usage.percent))
 
+
 # Monitor network requests
+
+
 def monitor_network():
     print("\n NETWORK REQUESTS")
     io_stats = psutil.net_io_counters()
     print("Total Bytes Sent {} ".format(io_stats.bytes_sent))
     print("Total Bytes Received {} ".format(io_stats.bytes_recv))
 
+
 # Monitor battery usage
+
+
 def monitor_battery():
     print("\n MONITOR BATTERY")
     battery_info =psutil.sensors_battery()
     print(" Battery Percent: {}".format(battery_info.percent))
     print(" Seconds left: {}".format(battery_info.secsleft))
+
 
 # Run all checks
 
@@ -86,3 +107,6 @@ def run_all_checks():
 
 
 run_all_checks()
+
+
+
