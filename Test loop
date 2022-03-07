@@ -1,8 +1,61 @@
+#hier sind zwei möglichkeiten für einen loop
+
+
+#möglichkeit 1:
 
 
 
-print ("hello world")
+#zuerst installiere über pip "schedule" 
+
+#oder
+
+#Go to the Github repo (https://github.com/dbader/schedule).
+#Open file schedule/__init__.py and copy the code.
+#In your project, create a packaged named schedule and paste the code in a file named __init__.py.
+
+
+import schedule
+import time
+
+def show_name():
+    print("")
+    print("")
+    print("#################")
+    print("#///////////////#")
+    print("#//hello World//#")
+    print("#///////////////#")
+    print("#################")
+    print("")
+    print("")
+
+schedule.every(4).seconds.do(show_name)
+
+while 1:
+    schedule.run_pending()
+    time.sleep(1)
+
+    
+#---------------------------------------------------------------------------------------------------------
+
+
+#möglichkeit 2:
+
+count = 0
+
+while count < 5:
+    print("")
+    print("")
+    print("#################")
+    print("#///////////////#")
+    print("#//hello World//#")
+    print("#///////////////#")
+    print("#################")
+    print("")
+    print("")
+
+    count = count + 1
+#ohne diese zeile würde das programm unendlich laufen, jetzt leuft es 5 mal weil es von 0 bis 4 zählt und alles darüber würde die while bedingung nicht mehr erfüllen
 
 
 
-#https://maschituts.com/2-ways-to-loop-back-to-the-beginning-of-a-program-in-python/#:~:text=We%20can%20loop%20back%20to,What%20is%20this%3F&text=Moreover%2C%20add%20a%20continue%20statement,the%20program%20from%20the%20beginning.
+
