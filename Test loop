@@ -17,7 +17,7 @@
 import schedule
 import time
 
-def show_name():
+def loop1():
     print("")
     print("")
     print("#################")
@@ -28,7 +28,7 @@ def show_name():
     print("")
     print("")
 
-schedule.every(4).seconds.do(show_name)
+schedule.every(4).seconds.do(loop1)
 
 while 1:
     schedule.run_pending()
