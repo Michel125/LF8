@@ -47,8 +47,11 @@ def mointor_cpu_cores():
     print("\n CPU CORES")
     print(psutil.cpu_count())
 
-    if psutil.cpu_count() == 8:
-        print("Hello World")
+    if psutil.cpu_count() == 12:
+        pass
+        
+    else:
+        print("Error")
 
 
 # Measure CPU frequencies
