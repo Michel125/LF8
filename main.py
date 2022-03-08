@@ -1,4 +1,5 @@
 import psutil
+from psutil import virtual_memory
 
 
 # Measure CPU times
@@ -14,6 +15,15 @@ def monitor_cpu_times():
     print("Time spent on processes by the System: {}".format(system_time))
     print("Time spent on processes by Idle: {}".format(idle_time))
 
+    if user_time == 2:
+        print("Hello World")
+    
+    if system_time == 3:
+        print("Hello World")
+
+    if idle_time == 39:
+        print("Hello World")
+
 
 # Measure CPU util
 
@@ -21,6 +31,13 @@ def monitor_cpu_times():
 def monitor_cpu_util():
     print("\n CPU UTIL")
     print(psutil.cpu_percent())
+
+    if psutil.cpu_percent() == 0.0:
+        print("Hello World")
+
+    
+         
+
 
 
 # Count working CPU cores
@@ -30,6 +47,12 @@ def mointor_cpu_cores():
     print("\n CPU CORES")
     print(psutil.cpu_count())
 
+    if psutil.cpu_count() == 12:
+        pass
+        
+    else:
+        print("Error")
+
 
 # Measure CPU frequencies
 
@@ -38,6 +61,9 @@ def monitor_cpu_freq():
     print("\n CPU FREQUENCIES")
     print("{}Mhz".format(psutil.cpu_freq().current))
 
+    if psutil.cpu_freq().current == 2101.0:
+        print("Hello World")
+
 
 # Monitor RAM Usage
 
@@ -45,18 +71,42 @@ def monitor_cpu_freq():
 def monitor_ram():
     print("\n RAM USAGE")
     virtual_memory = psutil.virtual_memory()
-    print("Total Memory {} bytes".format(virtual_memory.total))
-    print("Available Memory {} bytes".format(virtual_memory.available))
-    print("Used Memory {} bytes".format(virtual_memory.used))
-    print("Percentage used {}%".format(virtual_memory.percent))
+    total_rammemory = (virtual_memory.total)
+    available_rammemory = (virtual_memory.available)
+    used_rammemory = (virtual_memory.used)
+    percent_rammemory = (virtual_memory.percent)
+    print("Total Memory {} bytes".format(total_rammemory))
+    print("Available Memory {} bytes".format(available_rammemory))
+    print("Used Memory {} bytes".format(used_rammemory))
+    print("Percentage used {}%".format(percent_rammemory))
+
+    if total_rammemory == 8164143104:
+        print("Hello World")
+
+    if available_rammemory == 1609498624:
+        print("Hello World")
+
+    if used_rammemory == 6554644480:
+        print("Hello World")
+
+    if percent_rammemory == 80.3:
+        print("Hello World")
+    
+    
+
+
+
 
 
 # Monitor disk partitions
 
 
 def monitor_disk():
-    print("\n DISK USAGE")
+    print("\n DISK PARTITIONS")
     print(psutil.disk_partitions())
+
+    #Hier existiert kein Threshhold wert für eine if abfrage
+
 
 
 # Disk utilization
@@ -70,6 +120,18 @@ def monitor_disk_usage():
     print("Used Memory {} bytes".format(disk_usage.used))
     print("Percentage used {}%".format(disk_usage.percent))
 
+    if disk_usage.total == 254721126400:
+        print("Hello World")
+
+    if disk_usage.free == 138786320384:
+        print("Hello World")
+
+    if disk_usage.used == 115934806016:
+        print("Hello World")
+
+    if disk_usage.percent == 45.5:
+        print("Hello World")
+
 
 # Monitor network requests
 
@@ -80,6 +142,12 @@ def monitor_network():
     print("Total Bytes Sent {} ".format(io_stats.bytes_sent))
     print("Total Bytes Received {} ".format(io_stats.bytes_recv))
 
+    if io_stats.bytes_sent == 905211085:
+        print("Hello World")
+
+    if io_stats.bytes_recv == 1260587060:
+        print("Hello World")
+
 
 # Monitor battery usage
 
@@ -87,8 +155,14 @@ def monitor_network():
 def monitor_battery():
     print("\n MONITOR BATTERY")
     battery_info =psutil.sensors_battery()
-    print(" Battery Percent: {}".format(battery_info.percent))
+    print(" Battery Percent: {}%".format(battery_info.percent))
     print(" Seconds left: {}".format(battery_info.secsleft))
+
+    if battery_info.percent == 96:
+        print("Hello Wolrd")
+
+    if battery_info.secsleft == -2:
+        print("Hello World")
 
 
 # Run all checks
@@ -109,4 +183,4 @@ def run_all_checks():
 run_all_checks()
 
 
-
+#"if" abfragen sind nicht final (nur als Test)

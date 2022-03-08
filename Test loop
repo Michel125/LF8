@@ -1,0 +1,61 @@
+#hier sind zwei möglichkeiten für einen loop
+
+
+#möglichkeit 1:
+
+
+
+#zuerst installiere über pip "schedule" 
+
+#oder
+
+#Go to the Github repo (https://github.com/dbader/schedule).
+#Open file schedule/__init__.py and copy the code.
+#In your project, create a packaged named schedule and paste the code in a file named __init__.py.
+
+
+import schedule
+import time
+
+def loop1():
+    print("")
+    print("")
+    print("#################")
+    print("#///////////////#")
+    print("#//hello World//#")
+    print("#///////////////#")
+    print("#################")
+    print("")
+    print("")
+
+schedule.every(4).seconds.do(loop1)
+
+while 1:
+    schedule.run_pending()
+    time.sleep(1)
+
+    
+#---------------------------------------------------------------------------------------------------------
+
+
+#möglichkeit 2:
+
+count = 0
+
+while count < 5:
+    print("")
+    print("")
+    print("#################")
+    print("#///////////////#")
+    print("#//hello World//#")
+    print("#///////////////#")
+    print("#################")
+    print("")
+    print("")
+
+    count = count + 1
+#ohne diese zeile würde das programm unendlich laufen, jetzt leuft es 5 mal weil es von 0 bis 4 zählt und alles darüber würde die while bedingung nicht mehr erfüllen
+
+
+
+
